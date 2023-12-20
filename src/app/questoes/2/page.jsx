@@ -1,4 +1,16 @@
+'use client'
+import './page.css'
+import { useEffect, useState } from "react";
+
 export default function Questao2() {
+  const [count, setCount] = useState(0);
+  const decrementar = () => setCount((count) => count - 1);
+  const incrementar = () => setCount((count) => count + 1);
+
+  useEffect(() => {
+    setCount(10);
+  }, []);
+
   return (
     <>
       <h1>Questão 2</h1>
@@ -9,6 +21,13 @@ export default function Questao2() {
         lógica para atualizar o contador quando a tela for carregada e a lógica
         para atualizar o contador quando os botões forem clicados.
       </p>
+      <div className="card">
+        <div>
+          <button onClick={decrementar}>-1</button>
+          <button onClick={incrementar}>+1</button>
+        </div>
+        <div className="contador">{count}</div>
+      </div>
     </>
   );
 }
