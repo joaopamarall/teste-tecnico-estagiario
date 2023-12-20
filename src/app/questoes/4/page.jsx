@@ -1,3 +1,6 @@
+'use client'
+import './page.css'
+import ProductList from "./ProductList.jsx";
 const produtos = [
   {
     id: 1,
@@ -25,6 +28,9 @@ export default function Questao4() {
         objetos de produto e renderiza uma lista de produtos. Cada produto deve
         exibir seu nome e preço.
       </p>
+      <div className="card">
+        <ProductList products={produtos} />
+      </div>
     </>
   );
 }
